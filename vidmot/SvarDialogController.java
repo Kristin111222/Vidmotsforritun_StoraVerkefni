@@ -24,6 +24,9 @@ import java.io.IOException;
 
 
 public class SvarDialogController extends Dialog<String> {
+
+    @FXML
+    private Label fxValinSpurning;
     @FXML
     private Label fxSpurning; //valin spurning
     @FXML
@@ -60,6 +63,40 @@ public class SvarDialogController extends Dialog<String> {
         });
         }
 
+    /**
+     * Smiður sem setur spurningu í spurningareitinn
+     * Setur upp resultConverter sem skilar spurningunni
+     * @param selectedItem spurningin
+     */
+    public SvarDialogController(String selectedItem) {
+        setDialogPane(lesaSvarDialog());
+        fxValinSpurning.setText(selectedItem);
+        setResultConverter(b -> {
+            if (b.getButtonData().isDefaultButton()) {
+                return fxValinSpurning.getText();
+            }
+            else {
+                return null;
+            }
+        });
+    }
+    /**
+     * Les inn .fxml skrá fyrir DialogPane dialogsins
+     * @return DialogPane
+     */
+    private DialogPane lesaSvarDialog() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("svar-view.fxml"));
+        try {
+            // controller er settur sem þessi hlutur
+            fxmlLoader.setController(this);
+            return fxmlLoader.load();
+        }
+        catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
+    }
+
+
         /**
          * Hér skrifar maður inn svar, enter er action
          * feedback birtist fyrir neðan svar
@@ -69,28 +106,22 @@ public class SvarDialogController extends Dialog<String> {
         @FXML
         public void onSvar(ActionEvent event){
 
-               // spurningar.fjoldiSvaradraSpurninga();
-                //fxLabel1.setText("Fjöldi svaraðra spurninga er: " + spurningar.getFjoldiSvaradraSpurninga());
-                String svarNotanda = fxSvar.getText().trim();
-                String feedback = FeedbackService.provideFeedback(svarNotanda);
-                //birta valda spurningu í fxSvaradarSpurningar
-                fxLabel2.setText(feedback);
-                //setja valda spurningu í ListView
-               // String valinSpurning = fxSpurningar.getSelectionModel().getSelectedItem();
-                //fxSvar.clear();
-                //ObservableList<String> valinSpurningSemErSvorud = fxSvaradarSpurningar.getItems();
-                //valinSpurningSemErSvorud.add(valinSpurning);
-                //fxSpurning.setText(valinSpurning);
+                String svarNotanda = fxSvar.getText();
+                try {
+                    String feedback = FeedbackService.provideFeedback(svarNotanda);
+                    fxLabel2.setText(feedback);
+                } catch (Exception e) {
+                    fxLabel2.setText("Error fetching feedback.");
+                    e.printStackTrace();
+                }
             }
-
-
 
         public static void main (String[]args){
             Spurningar spurningar = new Spurningar();
             System.out.println(spurningar.getSpurningalisti("Færnispurningar").get(1));
             System.out.println(spurningar.getSpurningalisti("Tæknispurningar").get(0));
             System.out.println(spurningar.getFlokkar());
-            System.out.println(spurningar.getFjoldiSvaradraSpurninga());
+
         }
 
     }

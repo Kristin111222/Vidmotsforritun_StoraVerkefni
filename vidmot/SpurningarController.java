@@ -20,6 +20,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import vinnsla.Spurningar;
 
@@ -28,7 +29,10 @@ import java.util.Optional;
 public class SpurningarController {
 
     @FXML
-    private Label fxSpurning; // núverandi spurning sem er verið að svara
+    private TextArea fxHistory; // loggurinn
+
+    @FXML
+    private Label fxValinSpurning;
 
     @FXML
     private Label fxLabel1; //fjöldi svaraðra spurninga
@@ -62,6 +66,10 @@ public class SpurningarController {
                         fxSpurningar.setItems(spurningarnar);
                     }
                 });
+
+        //fxValinSpurning.textProperty().bind();
+
+
     }
 
 
@@ -70,13 +78,16 @@ public class SpurningarController {
      * @param event - Svara hnappur
      */
     public void onSvara(ActionEvent event){
-        SvarDialogController svarDialogController = new SvarDialogController();
+        SvarDialogController svarDialogController = new SvarDialogController(fxSpurningar
+                .getSelectionModel().getSelectedItem());
         Optional<String> result = svarDialogController.showAndWait();
-        if(result.isPresent()) {
+        result.ifPresent(s -> {
+            fxHistory.appendText(s + "\r\n");
             spurningar.haekkaFjoldiSpurning();
-            fxLabel1.setText("Fjöldi svaraðra spurninga er: " + spurningar.getFjoldiSvaradraSpurninga());
-        } else{
-    }}
+            fxLabel1.setText("Fjöldi svaraðra spurninga er: " + spurningar.propertyfjoldiSvaradraSpurninga());
+        });
+        }
+
 
     /**
      * Fara aftur í velkominn gluggann
