@@ -12,16 +12,14 @@ package com.example.vidmot;
  *  -- Sýnt lista yfir svaraðar spurningar
  *  -- Sýnt fjölda svaraðra spurninga
  *****************************************************************************/
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import javafx.stage.Stage;
 import vinnsla.Spurningar;
 
 import java.util.Optional;
@@ -66,10 +64,6 @@ public class SpurningarController {
                         fxSpurningar.setItems(spurningarnar);
                     }
                 });
-
-        //fxValinSpurning.textProperty().bind();
-
-
     }
 
 
@@ -77,7 +71,7 @@ public class SpurningarController {
      * Opna Dialog
      * @param event - Svara hnappur
      */
-    public void onSvara(ActionEvent event){
+    public void onSvara(ActionEvent event){ //hnappur , eftir að spurning er valin
         SvarDialogController svarDialogController = new SvarDialogController(fxSpurningar
                 .getSelectionModel().getSelectedItem());
         Optional<String> result = svarDialogController.showAndWait();
@@ -87,6 +81,30 @@ public class SpurningarController {
             fxLabel1.setText("Fjöldi svaraðra spurninga er: " + spurningar.propertyfjoldiSvaradraSpurninga());
         });
         }
+
+    /**
+     * Hnappur fyrir auka spurningu
+     * @param event
+     */
+    public void onAuka(ActionEvent event) { // opna Dialog
+            AukaDialogController aukaDialogController = new AukaDialogController();
+                   // fxSpurningar.getSelectionModel().getSelectedItem());
+            Optional<String> result = aukaDialogController.showAndWait();
+        }
+
+    /**
+     * Hnappur sem opnar nýjann glugga
+     * til að gefa einkunn fyrir forritið
+     * @param event
+     */
+        public void onEinkunn(ActionEvent event) {
+            EinkunnDialogController einkunnDialogController = new EinkunnDialogController();
+            // fxSpurningar.getSelectionModel().getSelectedItem());
+            Optional<String> result = einkunnDialogController.showAndWait();
+
+    }
+
+
 
 
     /**

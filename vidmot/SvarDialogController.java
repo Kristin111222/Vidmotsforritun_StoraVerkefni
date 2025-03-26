@@ -12,7 +12,7 @@ package com.example.vidmot;
  *          // selected item er spurningin sem notandinn ætlar að svara-setja reit í scenebuilder
  *         // public SvarDialogController(String selectedItem) {setDialogPane(lesaSvarDialog());
  *****************************************************************************/
-import javafx.collections.ObservableList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +20,7 @@ import javafx.scene.control.*;
 import javafx.util.Callback;
 import vinnsla.FeedbackService;
 import vinnsla.Spurningar;
+
 import java.io.IOException;
 
 
@@ -32,7 +33,7 @@ public class SvarDialogController extends Dialog<String> {
     @FXML
     private TextField fxSvar; //skrifa inn svarið
     @FXML
-    private Label fxLabel2; //feedback
+    private TextArea fxLabel2; //feedback
     @FXML
     private Spurningar spurningar;
     @FXML
@@ -104,12 +105,17 @@ public class SvarDialogController extends Dialog<String> {
          * @param event textField
          */
         @FXML
-        public void onSvar(ActionEvent event){
+        public void onSvar(ActionEvent event){ // svar og ýta á enter
 
                 String svarNotanda = fxSvar.getText();
+                String selectedItem = fxValinSpurning.getText();
+
                 try {
-                    String feedback = FeedbackService.provideFeedback(svarNotanda);
-                    fxLabel2.setText(feedback);
+                    String feedback = FeedbackService.provideFeedback(selectedItem, svarNotanda);
+
+                    fxLabel2.setText(feedback); // feedback birtist
+                    fxLabel2.setWrapText(true);  // Text wrapping
+
                 } catch (Exception e) {
                     fxLabel2.setText("Error fetching feedback.");
                     e.printStackTrace();
