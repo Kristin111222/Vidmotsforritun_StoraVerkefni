@@ -9,13 +9,13 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label fx:id="fxAukaSpurning" prefHeight="56.0" prefWidth="227.0" text="Hvað stendur CSS fyrir?" />
+                  <Label fx:id="fxAukaSpurning" prefHeight="56.0" prefWidth="227.0" text="Math.pow(2,2)" />
                   <Label fx:id="fxTimer" text="Timer" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="fxSvaraAukaSpurningu" onAction="#onSvaraAukaSpurningu" prefHeight="42.0" prefWidth="171.0" />
+                  <TextField fx:id="fxSvaraAukaSpurningu" onAction="#onSvaraAukaSpurningu" prefHeight="42.0" prefWidth="171.0" promptText="Skrifaðu svarið hér" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
