@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import vinnsla.FeedbackService;
 
 import java.io.IOException;
 
@@ -25,8 +26,22 @@ public class AukaDialogController extends Dialog<String> {
     @FXML
     private TextArea fxFeedbackAukaSpurning; //feedback
 
-    private int nidurtalning = 6; // Niðurtalning byrjar í 60 sek
+    private int nidurtalning = 20; // Niðurtalning byrjar í 20 sek
     private Timeline timeline;
+
+    @FXML
+    public void onSvaraAukaSpurningu(ActionEvent event){ // svar og ýta á enter
+        String svarNotanda = fxSvaraAukaSpurningu.getText();
+
+        try {
+            String feedback = FeedbackService.provideFeedback2(svarNotanda);
+            fxFeedbackAukaSpurning.setText(feedback); // feedback birtist
+
+        } catch (Exception e) {
+            fxFeedbackAukaSpurning.setText("Villuboð");
+            e.printStackTrace();
+        }
+    }
 
 
     public AukaDialogController() {
@@ -70,18 +85,6 @@ public class AukaDialogController extends Dialog<String> {
         timeline.setCycleCount(Timeline.INDEFINITE); // Repeat
         timeline.play(); // Byrja Timer
     }
-
-
-    /**
-     * Skrifa inn svar, enter er action
-     * @param event TextField
-     */
-    @FXML
-    public void onSvaraAukaSpurningu(ActionEvent event){ //textField enter
-        String svarNotanda = fxSvaraAukaSpurningu.getText(); //svarið
-    }
-
-
 
     public static void main(String[] args) {
         launch(args);

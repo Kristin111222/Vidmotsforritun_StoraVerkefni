@@ -11,42 +11,69 @@ package com.example.vidmot;
  *  -- Hætt
  *****************************************************************************/
 
+import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-import vinnsla.Spurningar;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-
-import java.io.IOException;
-
-import static com.example.vidmot.View.SPURNINGAR;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Hyperlink;
 //import static jdk.jpackage.internal.IOUtils.getFileName;
 
 public class VelkominnController {
 
+    @FXML
+    private CheckBox fxCheckBox;
+    @FXML
+    private Button fxSpurningar;
+    @FXML
+    private Hyperlink fxLinkur;
 
 
-    public void onSpurningar(ActionEvent event) throws IOException {
+    /**
+     * frumstillir
+     * Gerir spurningar hnapp óvirkann
+     * Setur listener á checkBox
+     */
+    public void initialize() {
+        fxSpurningar.setDisable(true);
+
+        fxCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+
+            fxSpurningar.setDisable(!newValue);
+        });
+    }
+
+
+    public void onCheckBox(ActionEvent event) {
+
+    }
+
+
+    /**
+     * Ýta á linkinn- linkur opnast
+     * @param event
+     */
+    public void onLinkur(ActionEvent event) {
+        ObservableMap<Object, Object> hostServices = fxLinkur.getScene().getWindow().getProperties();
+        hostServices.get("https://openai.com/policies/terms-of-use/");
+    }
+
+
+    /**
+     * Opna spurninga glugga
+     * @param event
+     */
+    public void onSpurningar(ActionEvent event) {
 
       ViewSwitcher.switchTo(View.SPURNINGAR);
 
 
     }
 
+    /**
+     * Skipta yfir í kveðju glugga
+     * @param event
+     */
     public void onHaetta1(ActionEvent event) {
 
         ViewSwitcher.switchTo(View.KVEDJA);

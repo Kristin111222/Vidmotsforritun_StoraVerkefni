@@ -78,7 +78,7 @@ public class SpurningarController {
         result.ifPresent(s -> {
             fxHistory.appendText(s + "\r\n");
             spurningar.haekkaFjoldiSpurning();
-            fxLabel1.setText("Fjöldi svaraðra spurninga er: " + spurningar.propertyfjoldiSvaradraSpurninga());
+            fxLabel1.setText("Fjöldi svaraðra spurninga er: " + spurningar.propertyfjoldiSvaradraSpurninga().getValue());
         });
         }
 
@@ -88,7 +88,6 @@ public class SpurningarController {
      */
     public void onAuka(ActionEvent event) { // opna Dialog
             AukaDialogController aukaDialogController = new AukaDialogController();
-                   // fxSpurningar.getSelectionModel().getSelectedItem());
             Optional<String> result = aukaDialogController.showAndWait();
         }
 
