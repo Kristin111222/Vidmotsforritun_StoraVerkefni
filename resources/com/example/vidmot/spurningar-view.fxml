@@ -4,56 +4,68 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="577.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vidmot.SpurningarController">
-   <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Label text="Veldu erfiðleikastig " translateX="15.0" translateY="40.0" />
-            <Label text="Listi yfir svaraðar spurningar" translateX="120.0" translateY="40.0" />
-         </children>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-         <children>
-            <ListView fx:id="fxFlokkar" prefHeight="200.0" prefWidth="200.0" />
-            <TextArea fx:id="fxHistory" prefHeight="200.0" prefWidth="200.0" />
-         </children></HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ListView fx:id="fxSpurningar" prefHeight="200.0" prefWidth="200.0" />
-            <Label fx:id="fxLabel1" text="Fjöldi svaraðra spurninga er: 0" translateX="40.0" translateY="40.0" />
-         </children></HBox>
-      <HBox prefHeight="95.0" prefWidth="578.0">
-         <children>
-            <ButtonBar prefHeight="95.0" prefWidth="296.0">
-               <buttons>
-                  <Button fx:id="fxSvara" mnemonicParsing="false" onAction="#onSvara" styleClass="label" text="Svara" />
-                  <Button fx:id="fxTilBaka" mnemonicParsing="false" onAction="#onTilBaka" styleClass="label" text="Til baka" />
-                  <Button fx:id="fxHaetta2" mnemonicParsing="false" onAction="#onHaetta2" prefHeight="26.0" prefWidth="179.0" styleClass="label" text="Hætta" />
-               </buttons>
-            </ButtonBar>
-         </children>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#onAuka" prefHeight="70.0" prefWidth="151.0" style="-fx-background-image: url('file:/C:/Users/rober/tol/question2.jpg'); -fx-background-size: cover;" text="Auka      spurning" textOverrun="WORD_ELLIPSIS">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-            <Button mnemonicParsing="false" onAction="#onEinkunn" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #597BFC;" text="Einkunn">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-         </children></HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-            <Label prefHeight="48.0" prefWidth="122.0" text="Gefðu okkur einkunn" translateX="-42.0" translateY="-40.0" />
-         </children>
-      </HBox>
-   </children>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0"
+      prefWidth="577.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.vidmot.SpurningarController">
+    <children>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Label text="Veldu erfiðleikastig " translateX="15.0" translateY="40.0"/>
+                <Label text="Listi yfir svaraðar spurningar" translateX="120.0" translateY="40.0"/>
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <children>
+                <ListView fx:id="fxFlokkar" prefHeight="200.0" prefWidth="200.0"/>
+                <TextArea fx:id="fxHistory" prefHeight="200.0" prefWidth="200.0"/>
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <ListView fx:id="fxSpurningar" prefHeight="200.0" prefWidth="200.0"/>
+                <Label fx:id="fxLabel1" text="Fjöldi svaraðra spurninga er: 0" translateX="40.0" translateY="40.0"/>
+            </children>
+        </HBox>
+        <HBox prefHeight="95.0" prefWidth="578.0">
+            <children>
+                <ButtonBar prefHeight="95.0" prefWidth="296.0">
+                    <buttons>
+                        <Button fx:id="fxSvara" mnemonicParsing="false" onAction="#onSvara" styleClass="label"
+                                text="Svara"/>
+                        <Button fx:id="fxTilBaka" mnemonicParsing="false" onAction="#onTilBaka" styleClass="label"
+                                text="Til baka"/>
+                        <Button fx:id="fxHaetta2" mnemonicParsing="false" onAction="#onHaetta2" prefHeight="26.0"
+                                prefWidth="179.0" styleClass="label" text="Hætta"/>
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onAuka" prefHeight="70.0" prefWidth="151.0"
+                        style="-fx-background-image: url('file:/C:/Users/rober/tol/question2.jpg'); -fx-background-size: cover;"
+                        text="Auka      spurning" textOverrun="WORD_ELLIPSIS">
+                    <font>
+                        <Font name="System Bold" size="14.0"/>
+                    </font>
+                </Button>
+                <Pane prefHeight="200.0" prefWidth="200.0"/>
+                <Button mnemonicParsing="false" onAction="#onEinkunn" prefHeight="40.0" prefWidth="128.0"
+                        style="-fx-background-color: #597BFC;" text="Einkunn">
+                    <font>
+                        <Font name="System Bold" size="14.0"/>
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Pane prefHeight="200.0" prefWidth="200.0"/>
+                <Pane prefHeight="200.0" prefWidth="200.0"/>
+                <Label prefHeight="48.0" prefWidth="122.0" text="Gefðu okkur einkunn" translateX="-42.0"
+                       translateY="-40.0"/>
+            </children>
+        </HBox>
+    </children>
 
 </VBox>
