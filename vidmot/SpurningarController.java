@@ -1,6 +1,6 @@
 package com.example.vidmot;
 /******************************************************************************
- *  Nafn    : Kristín Sesselja Róbertsdóttir
+ *  @author Kristín Sesselja Róbertsdóttir
  *  T-póstur: ksr11@hi.is
  *  Viðmótsforritun 2025
  *
@@ -27,29 +27,19 @@ import java.util.Optional;
 public class SpurningarController {
 
     @FXML
-    private TextArea fxHistory; // loggurinn
-
+    private TextArea fxHistory;
     @FXML
-    private Label fxValinSpurning;
-
+    private Label fxLabel1;
     @FXML
-    private Label fxLabel1; //fjöldi svaraðra spurninga
-
+    private ListView<String> fxFlokkar;
     @FXML
-    private ListView<String> fxFlokkar; //listi með 2 flokkur
-
-    @FXML
-    private ListView<String> fxSpurningar; // spurningar úr flokki
-
-    @FXML
-    private ListView<String> fxSvaradarSpurningar; //listi...
-
-    private int virkurIndex=0;
-
+    private ListView<String> fxSpurningar;
+    private int virkurIndex = 0;
     private Spurningar spurningar = new Spurningar();
 
 
-    /** setur flokka í ListView, Listener fyrir valið, sækir spurningalistann
+    /**
+     * setur flokka í ListView, Listener fyrir valið, sækir spurningalistann
      * initialize
      */
     public void initialize() {
@@ -69,9 +59,10 @@ public class SpurningarController {
 
     /**
      * Opna Dialog
+     *
      * @param event - Svara hnappur
      */
-    public void onSvara(ActionEvent event){ //hnappur , eftir að spurning er valin
+    public void onSvara(ActionEvent event) { //hnappur , eftir að spurning er valin
         SvarDialogController svarDialogController = new SvarDialogController(fxSpurningar
                 .getSelectionModel().getSelectedItem());
         Optional<String> result = svarDialogController.showAndWait();
@@ -80,45 +71,44 @@ public class SpurningarController {
             spurningar.haekkaFjoldiSpurning();
             fxLabel1.setText("Fjöldi svaraðra spurninga er: " + spurningar.propertyfjoldiSvaradraSpurninga().getValue());
         });
-        }
+    }
 
     /**
      * Hnappur fyrir auka spurningu
+     *
      * @param event
      */
     public void onAuka(ActionEvent event) { // opna Dialog
-            AukaDialogController aukaDialogController = new AukaDialogController();
-            Optional<String> result = aukaDialogController.showAndWait();
-        }
+        AukaDialogController aukaDialogController = new AukaDialogController();
+        Optional<String> result = aukaDialogController.showAndWait();
+    }
 
     /**
      * Hnappur sem opnar nýjann glugga
      * til að gefa einkunn fyrir forritið
+     *
      * @param event
      */
-        public void onEinkunn(ActionEvent event) {
-            EinkunnDialogController einkunnDialogController = new EinkunnDialogController();
-            // fxSpurningar.getSelectionModel().getSelectedItem());
-            Optional<String> result = einkunnDialogController.showAndWait();
-
+    public void onEinkunn(ActionEvent event) {
+        EinkunnDialogController einkunnDialogController = new EinkunnDialogController();
+        Optional<String> result = einkunnDialogController.showAndWait();
     }
-
-
-
 
     /**
      * Fara aftur í velkominn gluggann
+     *
      * @param event - Til baka hnappur
      */
-    public void onTilBaka(ActionEvent event){
+    public void onTilBaka(ActionEvent event) {
         ViewSwitcher.switchTo(View.VELKOMINN);
     }
 
     /**
      * Fara í kveðju gluggann
+     *
      * @param event - Hætta hnappur
      */
-    public void onHaetta2(ActionEvent event){
+    public void onHaetta2(ActionEvent event) {
         ViewSwitcher.switchTo(View.KVEDJA);
     }
 }

@@ -1,10 +1,11 @@
 package com.example.vidmot;
+
 /******************************************************************************
- *  Nafn    : Kristín Sesselja Róbertsdóttir
+ *  @author Kristín Sesselja Róbertsdóttir
  *  T-póstur: ksr11@hi.is
  *  Viðmótsforritun 2025
  *
- *  View - nöfn á fxml skrám
+ *  nöfn á fxml skrám - hægt að kalla á
  *****************************************************************************/
 
 
@@ -19,7 +20,6 @@ public enum View {
     private final String fileName;
 
     /**
-     *
      * @param fileName
      */
     View(String fileName) {
@@ -27,7 +27,6 @@ public enum View {
     }
 
     /**
-     *
      * @return fileName
      */
     public String getFileName() {

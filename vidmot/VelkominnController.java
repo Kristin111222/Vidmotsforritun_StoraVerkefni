@@ -1,6 +1,6 @@
 package com.example.vidmot;
 /******************************************************************************
- *  Nafn    : Kristín Sesselja Róbertsdóttir
+ *  @author Kristín Sesselja Róbertsdóttir
  *  T-póstur: ksr11@hi.is
  *  Viðmótsforritun 2025
  *
@@ -17,7 +17,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
-//import static jdk.jpackage.internal.IOUtils.getFileName;
+
 
 public class VelkominnController {
 
@@ -51,6 +51,7 @@ public class VelkominnController {
 
     /**
      * Ýta á linkinn- linkur opnast
+     *
      * @param event
      */
     public void onLinkur(ActionEvent event) {
@@ -61,17 +62,19 @@ public class VelkominnController {
 
     /**
      * Opna spurninga glugga
+     *
      * @param event
      */
     public void onSpurningar(ActionEvent event) {
 
-      ViewSwitcher.switchTo(View.SPURNINGAR);
+        ViewSwitcher.switchTo(View.SPURNINGAR);
 
 
     }
 
     /**
      * Skipta yfir í kveðju glugga
+     *
      * @param event
      */
     public void onHaetta1(ActionEvent event) {

@@ -1,4 +1,12 @@
 package com.example.vidmot;
+/******************************************************************************
+ *  @author Kristín Sesselja Róbertsdóttir
+ *  T-póstur: ksr11@hi.is
+ *  Viðmótsforritun 2025
+ *
+ * Notandi getur svarað auka spurningu
+ * Tími telur niður, svo lokast glugginn í 0 sek
+ *****************************************************************************/
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -20,22 +28,21 @@ public class AukaDialogController extends Dialog<String> {
     private Label fxTimer; //Label fyrir Timer
 
     @FXML
-    private Label fxAukaSpurning; // Label fyrir auka spurningu
+    private Label fxAukaSpurning;
     @FXML
-    private TextField fxSvaraAukaSpurningu; //TextField fyrir svarið
+    private TextField fxSvaraAukaSpurningu;
     @FXML
-    private TextArea fxFeedbackAukaSpurning; //feedback
-
-    private int nidurtalning = 20; // Niðurtalning byrjar í 20 sek
+    private TextArea fxFeedbackAukaSpurning;
+    private int nidurtalning = 20;
     private Timeline timeline;
 
     @FXML
-    public void onSvaraAukaSpurningu(ActionEvent event){ // svar og ýta á enter
+    public void onSvaraAukaSpurningu(ActionEvent event) {
         String svarNotanda = fxSvaraAukaSpurningu.getText();
 
         try {
             String feedback = FeedbackService.provideFeedback2(svarNotanda);
-            fxFeedbackAukaSpurning.setText(feedback); // feedback birtist
+            fxFeedbackAukaSpurning.setText(feedback);
 
         } catch (Exception e) {
             fxFeedbackAukaSpurning.setText("Villuboð");
@@ -62,7 +69,7 @@ public class AukaDialogController extends Dialog<String> {
             }
         });
 
-        Timer(); //virka Timer
+        Timer();
     }
 
     /**
@@ -78,12 +85,12 @@ public class AukaDialogController extends Dialog<String> {
                     // Loka Dialog þegar talning er komin í 0
                     if (nidurtalning <= 0) {
                         timeline.stop();
-                       close();
+                        close();
                     }
                 })
         );
         timeline.setCycleCount(Timeline.INDEFINITE); // Repeat
-        timeline.play(); // Byrja Timer
+        timeline.play();
     }
 
     public static void main(String[] args) {

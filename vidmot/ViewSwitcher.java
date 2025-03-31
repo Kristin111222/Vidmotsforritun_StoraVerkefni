@@ -1,13 +1,10 @@
 package com.example.vidmot;
 /******************************************************************************
- *  Nafn    : Kristín Sesselja Róbertsdóttir
+ *  @author Kristín Sesselja Róbertsdóttir
  *  T-póstur: ksr11@hi.is
  *  Viðmótsforritun 2025
  *
- *  ViewSwitcher
- *  getur:
- *
- *  -- skipt á milli scene
+ *  - skiptir á milli sena
  *****************************************************************************/
 
 
@@ -48,23 +45,22 @@ public class ViewSwitcher {
 
         try {
             Parent root;
-            // fletta upp í skyndiminni
             if (cache.containsKey(view)) {
                 System.out.println("Loading from cache");
 
                 root = cache.get(view);
-                // annars lesa úr .fxml skrá
+
             } else {
                 System.out.println("Loading from FXML");
-                // lesa inn .fxml skrána og rótin á viðmótstrénu verður root
+
                 root = FXMLLoader.load(
                         ViewSwitcher.class.getResource(view.getFileName())
                 );
-                // geyma í skyndimynni - tengja saman view og root
+
                 cache.put(view, root);
             }
 
-            // setja rótina í núverandi senu
+
             scene.setRoot(root);
 
         } catch (IOException e) {

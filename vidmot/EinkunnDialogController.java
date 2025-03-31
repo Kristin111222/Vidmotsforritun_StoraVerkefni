@@ -1,4 +1,11 @@
 package com.example.vidmot;
+/******************************************************************************
+ *  @author Kristín Sesselja Róbertsdóttir
+ *  T-póstur: ksr11@hi.is
+ *  Viðmótsforritun 2025
+ *
+ * -Notandi gefur einkunn og umsögn
+ *****************************************************************************/
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,30 +21,11 @@ public class EinkunnDialogController extends Dialog<String> {
 
     @FXML
     private TextField fxEinkunn;
-    @FXML
-    private TextArea fxEinkunnFeedback;
+
 
     @FXML
-    public void onEinkunn(ActionEvent event) { // svar og ýta á enter
+    public void onEinkunn(ActionEvent event) {
     }
-
-/*
-    @FXML
-    public void onGefaEinkunn(ActionEvent event){ // svar og ýta á enter
-        String svarNotanda = fxEinkunn.getText();
-
-        try {
-            String feedback = FeedbackService.provideFeedback2(svarNotanda);
-            fxEinkunnFeedback.setText(feedback); // feedback birtist
-
-        } catch (Exception e) {
-            fxEinkunnFeedback.setText("Villuboð");
-            e.printStackTrace();
-        }
-    }
-
- */
-
 
 
     public EinkunnDialogController() {
@@ -51,13 +39,14 @@ public class EinkunnDialogController extends Dialog<String> {
             e.printStackTrace();
         }
         setResultConverter(new Callback<ButtonType, String>() {
-           @Override
+            @Override
             public String call(ButtonType buttonType) {
                 String svarNotanda = fxEinkunn.getText().trim();
-               return svarNotanda.isEmpty() ? null : svarNotanda;
+                return svarNotanda.isEmpty() ? null : svarNotanda;
             }
         });
     }
+
     public static void main(String[] args) {
         launch(args);
     }

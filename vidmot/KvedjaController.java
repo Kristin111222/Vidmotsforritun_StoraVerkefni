@@ -1,13 +1,13 @@
 package com.example.vidmot;
 /******************************************************************************
- *  Nafn    : Kristín Sesselja Róbertsdóttir
+ *  @author Kristín Sesselja Róbertsdóttir
  *  T-póstur: ksr11@hi.is
  *  Viðmótsforritun 2025
  *
  *  Controller fyrir Kveðju
  *  getur:
  *
- *  -- loka forritinu
+ *  - lokað forritinu
  *****************************************************************************/
 
 import javafx.event.ActionEvent;
@@ -18,6 +18,7 @@ public class KvedjaController {
 
     /**
      * Loka forritinu
+     *
      * @param event Hætta hnappur
      */
     public void onHaetta4(ActionEvent event) {
