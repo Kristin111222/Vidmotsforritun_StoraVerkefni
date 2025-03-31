@@ -9,7 +9,7 @@
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="Veldu erfiðleikastig " translateX="15.0" translateY="40.0" />
-            <Label text="Listi yfir svaraðar spurningar" translateX="100.0" translateY="40.0" />
+            <Label text="Listi yfir svaraðar spurningar" translateX="120.0" translateY="40.0" />
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -40,7 +40,20 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Button mnemonicParsing="false" onAction="#onEinkunn" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #597BFC;" text="Einkunn">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
          </children></HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+            <Label prefHeight="48.0" prefWidth="122.0" text="Gefðu okkur einkunn" translateX="-42.0" translateY="-40.0" />
+         </children>
+      </HBox>
    </children>
 
 </VBox>
