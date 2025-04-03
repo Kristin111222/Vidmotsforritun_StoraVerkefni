@@ -13,4 +13,4 @@ Fyrir að keyra þetta Java verkefni þarftu eftirfarandi:
 1. Klónaðu þessa Git repo á tölvuna þína:
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+  https://github.com/Kristin111222/Vidmotsforritun_StoraVerkefni
