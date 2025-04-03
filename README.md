@@ -1,4 +1,7 @@
 # Lýsing á byggingu og keyrslu
+- Höfundur: Kristín Sesselja Róbertsdóttir
+- Email: ksr11@hi.is
+- Github reikningur: kristin111222
 
 ## Kröfur
 
