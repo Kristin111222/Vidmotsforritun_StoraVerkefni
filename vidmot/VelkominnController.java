@@ -11,12 +11,17 @@ package com.example.vidmot;
  *  -- Hætt
  *****************************************************************************/
 
-import javafx.collections.ObservableMap;
+import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Hyperlink;
+
+import java.awt.*;
+import java.net.URI;
+
+import static javafx.application.Application.launch;
 
 
 public class VelkominnController {
@@ -27,6 +32,8 @@ public class VelkominnController {
     private Button fxSpurningar;
     @FXML
     private Hyperlink fxLinkur;
+
+    private HostServices hostServices;
 
 
     /**
@@ -39,7 +46,7 @@ public class VelkominnController {
 
         fxCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
 
-            fxSpurningar.setDisable(!newValue);
+            fxSpurningar.setDisable(false);
         });
     }
 
@@ -49,27 +56,31 @@ public class VelkominnController {
     }
 
 
-    /**
-     * Ýta á linkinn- linkur opnast
-     *
-     * @param event
-     */
+
+
     public void onLinkur(ActionEvent event) {
-        ObservableMap<Object, Object> hostServices = fxLinkur.getScene().getWindow().getProperties();
-        hostServices.get("https://openai.com/policies/terms-of-use/");
+        try {
+            String url = "https://openai.com/policies/terms-of-use/";
+            URI uri = new URI(url);
+
+            if (Desktop.isDesktopSupported()) {
+                Desktop.getDesktop().browse(uri);  // Opens in default web browser
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
+
     /**
-     * Opna spurninga glugga
-     *
-     * @param event
-     */
+         * Opna spurninga glugga
+         *
+         * @param event
+         */
     public void onSpurningar(ActionEvent event) {
 
         ViewSwitcher.switchTo(View.SPURNINGAR);
-
-
     }
 
     /**
@@ -81,6 +92,17 @@ public class VelkominnController {
 
         ViewSwitcher.switchTo(View.KVEDJA);
     }
+
+
+    public static void main(String[] args) {
+        launch();
+
+
+       // String chromePath;
+       // System.out.println("Chrome Path: "+chromePath);
+}
+
+
 }
 
 
