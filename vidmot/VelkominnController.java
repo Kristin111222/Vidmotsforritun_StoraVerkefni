@@ -50,14 +50,20 @@ public class VelkominnController {
         });
     }
 
-
+    /**
+     * Tjekk boxið
+     *
+     * @param event
+     */
     public void onCheckBox(ActionEvent event) {
-
     }
 
 
-
-
+    /**
+     * Linkur með notendaskilmálum opnast í vafra
+     *
+     * @param event
+     */
     public void onLinkur(ActionEvent event) {
         try {
             String url = "https://openai.com/policies/terms-of-use/";
@@ -72,12 +78,11 @@ public class VelkominnController {
     }
 
 
-
     /**
-         * Opna spurninga glugga
-         *
-         * @param event
-         */
+     * Opna spurninga glugga
+     *
+     * @param event
+     */
     public void onSpurningar(ActionEvent event) {
 
         ViewSwitcher.switchTo(View.SPURNINGAR);
@@ -97,10 +102,7 @@ public class VelkominnController {
     public static void main(String[] args) {
         launch();
 
-
-       // String chromePath;
-       // System.out.println("Chrome Path: "+chromePath);
-}
+    }
 
 
 }

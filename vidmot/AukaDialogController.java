@@ -26,7 +26,6 @@ public class AukaDialogController extends Dialog<String> {
 
     @FXML
     private Label fxTimer; //Label fyrir Timer
-
     @FXML
     private Label fxAukaSpurning;
     @FXML
@@ -36,6 +35,12 @@ public class AukaDialogController extends Dialog<String> {
     private int nidurtalning = 20;
     private Timeline timeline;
 
+    /**
+     * Ýtt á hnapp sem heitir Extra
+     * auka gluggi opnast
+     *
+     * @param event
+     */
     @FXML
     public void onSvaraAukaSpurningu(ActionEvent event) {
         String svarNotanda = fxSvaraAukaSpurningu.getText();
@@ -51,6 +56,9 @@ public class AukaDialogController extends Dialog<String> {
     }
 
 
+    /**
+     * Opnar glugga með auka spurningu (Extra spurning)
+     */
     public AukaDialogController() {
 
         try {

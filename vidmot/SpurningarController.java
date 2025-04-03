@@ -62,7 +62,7 @@ public class SpurningarController {
      *
      * @param event - Svara hnappur
      */
-    public void onSvara(ActionEvent event) { //hnappur , eftir að spurning er valin
+    public void onSvara(ActionEvent event) {
         SvarDialogController svarDialogController = new SvarDialogController(fxSpurningar
                 .getSelectionModel().getSelectedItem());
         Optional<String> result = svarDialogController.showAndWait();
@@ -78,7 +78,7 @@ public class SpurningarController {
      *
      * @param event
      */
-    public void onAuka(ActionEvent event) { // opna Dialog
+    public void onAuka(ActionEvent event) {
         AukaDialogController aukaDialogController = new AukaDialogController();
         Optional<String> result = aukaDialogController.showAndWait();
     }
