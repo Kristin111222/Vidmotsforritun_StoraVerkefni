@@ -10,8 +10,22 @@ Fyrir að keyra þetta Java verkefni þarftu eftirfarandi:
 
 ## Uppsetning
 
-1. Klónaðu þessa Git repo á tölvuna þína:
+1. Klónaðu þessa Git slóð á tölvuna þína:
 
 ```bash
 https://github.com/Kristin111222/Vidmotsforritun_StoraVerkefni
 ```
+
+## Keyrðu verkefnið með
+
+```bash
+mvn exec:java
+```
+
+## Settu skrár á Git
+
+```bash
+git commit -m "Hér kemur lýsing á breytingu/bætingu"
+git push origin main
+```
+
