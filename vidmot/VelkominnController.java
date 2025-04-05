@@ -46,7 +46,7 @@ public class VelkominnController {
 
         fxCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
 
-            fxSpurningar.setDisable(false);
+            fxSpurningar.setDisable(!newValue);
         });
     }
 
