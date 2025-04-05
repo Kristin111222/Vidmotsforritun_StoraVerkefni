@@ -4,14 +4,14 @@
 -fx-font-weight: bold;
 
 }
-.button {
-    -fx-background-color: transparent;
-    -fx-border-width: 0;
-    -fx-text-fill: #000000;
-}
+
 
 .button:hover {
-    -fx-text-fill: #ffcc00; // breyta stjörnum í gull litað
+    -fx-background-color: #FFFFFF;
 }
 
+.button {
+    -fx-background-color:  #597BFC; /* Set the default color */
+    -fx-text-fill: white; /* Set the text color */
+}
 

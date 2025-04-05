@@ -10,7 +10,7 @@
             <children>
                 <Label text="Veldu erfiðleikastig " translateX="15.0" translateY="40.0">
                <font>
-                  <Font name="Arial" size="12.0" />
+                  <Font name="Arial Black" size="12.0" />
                </font></Label>
                 <Label text="Listi yfir svaraðar spurningar" translateX="120.0" translateY="40.0" />
             </children>
@@ -42,12 +42,12 @@
             <children>
             <ButtonBar prefHeight="40.0" prefWidth="200.0">
               <buttons>
-                      <Button graphicTextGap="0.0" mnemonicParsing="false" onAction="#onAuka" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #597BFC;" text="Extra" textOverrun="WORD_ELLIPSIS">
+                      <Button graphicTextGap="0.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAuka" prefHeight="40.0" prefWidth="50.0" text="Extra" textOverrun="WORD_ELLIPSIS">
                           <font>
                               <Font name="System Bold" size="12.0" />
                           </font>
                       </Button>
-                      <Button mnemonicParsing="false" onAction="#onEinkunn" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #597BFC;" text="Einkunn">
+                      <Button mnemonicParsing="false" onAction="#onEinkunn" prefHeight="40.0" prefWidth="128.0" text="Einkunn">
                           <font>
                               <Font name="System Bold" size="14.0" />
                           </font>
