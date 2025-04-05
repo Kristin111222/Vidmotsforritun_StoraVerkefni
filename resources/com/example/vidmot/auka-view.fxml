@@ -10,7 +10,7 @@
                 <HBox prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <Label fx:id="fxAukaSpurning" prefHeight="56.0" prefWidth="205.0" text="Math.pow(2,2)" translateX="80.0" />
-                        <Label fx:id="fxTimer" text="Timer" translateX="200.0" />
+                        <Label fx:id="fxTimer" text="Timer" translateX="70.0" />
                     </children>
                 </HBox>
                 <HBox prefHeight="100.0" prefWidth="200.0">
