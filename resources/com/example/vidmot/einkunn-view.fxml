@@ -3,23 +3,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<DialogPane prefHeight="290.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1">
+<DialogPane prefHeight="290.0" prefWidth="460.0" styleClass="label" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
     <content>
         <VBox prefHeight="200.0" prefWidth="100.0">
             <children>
-                <Label prefHeight="18.0" prefWidth="304.0" text="Vinsamlega gefðu okkur einkunn frá 0-10"/>
-                <TextField fx:id="fxEinkunn" onAction="#onEinkunn"/>
-                <Label prefHeight="18.0" prefWidth="401.0"
-                       text="Vinsamlega gefðu okkur álit t.d. hvað var gott , eða hvað má betur fara"/>
-                <TextArea fx:id="fxEinkunnFeedback" prefHeight="200.0" prefWidth="200.0"/>
-                <HBox prefHeight="100.0" prefWidth="200.0"/>
-                <HBox prefHeight="100.0" prefWidth="200.0"/>
-                <HBox prefHeight="100.0" prefWidth="200.0"/>
-                <HBox prefHeight="100.0" prefWidth="200.0"/>
+                <Label prefHeight="18.0" prefWidth="304.0" text="Vinsamlega gefðu okkur einkunn frá 0-10" />
+                <TextField fx:id="fxEinkunn" onAction="#onEinkunn" />
+                <Label prefHeight="18.0" prefWidth="401.0" text="Vinsamlega gefðu okkur álit t.d. hvað var gott , eða hvað má betur fara" />
+                <TextArea fx:id="fxEinkunnFeedback" prefHeight="200.0" prefWidth="200.0" />
+                <HBox prefHeight="100.0" prefWidth="200.0" />
+                <HBox prefHeight="100.0" prefWidth="200.0" />
+                <HBox prefHeight="100.0" prefWidth="200.0" />
+                <HBox prefHeight="100.0" prefWidth="200.0" />
             </children>
         </VBox>
     </content>
-    <ButtonType fx:id="fxILagi" buttonData="OK_DONE" text="Í lagi"/>
-    <ButtonType fx:id="fxHaettaVid" buttonData="CANCEL_CLOSE" text="Hætta við"/>
+    <ButtonType fx:id="fxILagi" buttonData="OK_DONE" text="Í lagi" />
+    <ButtonType fx:id="fxHaettaVid" buttonData="CANCEL_CLOSE" text="Hætta við" />
 </DialogPane>

@@ -1,8 +1,5 @@
 .label {
-
 -fx-font-size: 12;
--fx-font-weight: bold;
-
 }
 
 
@@ -13,5 +10,9 @@
 .button {
     -fx-background-color:  #597BFC; /* Set the default color */
     -fx-text-fill: white; /* Set the text color */
+}
+
+.footerVBOX {
+    -fx-background-color: rgb(200,200,200);
 }
 

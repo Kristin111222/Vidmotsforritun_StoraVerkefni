@@ -5,45 +5,42 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" spacing="20.0" style="-fx-border-color: black;"
-      xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.vidmot.VelkominnController">
+<VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" spacing="20.0" style="-fx-border-color: black;" styleClass="label" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vidmot.VelkominnController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
     <HBox prefHeight="100.0" prefWidth="200.0">
         <children>
 
             <Label fx:id="fxLabel" text="Velkomin/n í Viðtalsþjálfann." textAlignment="CENTER">
                 <font>
-                    <Font size="14.0"/>
+                    <Font size="14.0" />
                 </font>
             </Label>
         </children>
     </HBox>
     <HBox prefHeight="100.0" prefWidth="200.0">
         <children>
-            <CheckBox fx:id="fxCheckBox" mnemonicParsing="false" onAction="#onCheckBox"/>
-            <Label text=" Ég samþykki"/>
-            <Hyperlink fx:id="fxLinkur" onAction="#onLinkur" prefHeight="24.0" prefWidth="270.0" text=" Notandaskilmála"
-                       translateY="-4.0">
+            <CheckBox fx:id="fxCheckBox" mnemonicParsing="false" onAction="#onCheckBox" />
+            <Label text=" Ég samþykki" />
+            <Hyperlink fx:id="fxLinkur" onAction="#onLinkur" prefHeight="24.0" prefWidth="270.0" text=" Notandaskilmála" translateY="-4.0">
                 <font>
-                    <Font name="System Bold" size="12.0"/>
+                    <Font name="System Bold" size="12.0" />
                 </font>
             </Hyperlink>
         </children>
     </HBox>
-    <HBox prefHeight="100.0" prefWidth="200.0"/>
+    <HBox prefHeight="100.0" prefWidth="200.0" />
     <HBox prefHeight="29.0" prefWidth="149.0">
         <children>
             <ButtonBar prefHeight="40.0" prefWidth="200.0">
                 <buttons>
-                    <Button fx:id="fxSpurningar" disable="true" mnemonicParsing="false" onAction="#onSpurningar"
-                            prefHeight="30.0" prefWidth="97.0" styleClass="label" text="Spurningar"/>
-                    <Button fx:id="fxHaetta1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
-                            onAction="#onHaetta1" prefHeight="26.0" prefWidth="55.0" styleClass="label" text="Hætta"/>
+                    <Button fx:id="fxSpurningar" disable="true" mnemonicParsing="false" onAction="#onSpurningar" prefHeight="30.0" prefWidth="97.0" styleClass="label" text="Spurningar" />
+                    <Button fx:id="fxHaetta1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onHaetta1" prefHeight="26.0" prefWidth="55.0" styleClass="label" text="Hætta" />
                 </buttons>
             </ButtonBar>
         </children>
+
     </HBox>
+        <fx:include source="footer.fxml" />
 </VBox>

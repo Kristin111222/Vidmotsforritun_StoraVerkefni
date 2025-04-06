@@ -3,15 +3,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0"
-      prefWidth="291.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.vidmot.KvedjaController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="86.0" prefWidth="291.0" styleClass="label" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vidmot.KvedjaController">
     <children>
-        <Label prefHeight="46.0" prefWidth="246.0" text="Gangi þér vel í viðtalinu!" translateX="30.0"/>
+        <Label prefHeight="46.0" prefWidth="246.0" text="Gangi þér vel í viðtalinu!" translateX="30.0" />
         <ButtonBar prefHeight="40.0" prefWidth="200.0">
             <buttons>
-                <Button fx:id="fxHaetta4" mnemonicParsing="false" onAction="#onHaetta4" styleClass="label" text="Hætta"
-                        translateX="-10.0"/>
+                <Button fx:id="fxHaetta4" mnemonicParsing="false" onAction="#onHaetta4" styleClass="label" text="Hætta" translateX="-10.0" />
             </buttons>
         </ButtonBar>
     </children>
