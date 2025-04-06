@@ -32,3 +32,27 @@ git commit -m "Hér kemur lýsing á breytingu/bætingu"
 git push origin main
 ```
 
+# Klasar
+## Viðmótið
+- AukaDialogController
+- EinkunnDialogController
+- InterviewApplication
+- KvedjaController
+- SpurningarController
+- SvarDialogController
+- VelkominnController
+- View
+- ViewSwitcher
+
+## Vinnsla
+- FeedbackService
+- Spurningar
+
+## Resources
+- auka-view.fxml
+- einkunn-view.fxml
+- kvedja.view.fxml
+- spurningar-view.fxml
+- svar-view.fxml
+- velkominn-view.fxml
+
