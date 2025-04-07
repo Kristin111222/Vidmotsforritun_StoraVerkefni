@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -14,18 +15,27 @@
                </font></Label>
                 <Label text="Listi yfir svaraðar spurningar" translateX="120.0" translateY="40.0" />
             </children>
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
             <children>
                 <ListView fx:id="fxFlokkar" prefHeight="200.0" prefWidth="200.0" />
                 <TextArea fx:id="fxHistory" prefHeight="200.0" prefWidth="200.0" />
             </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
                 <ListView fx:id="fxSpurningar" prefHeight="200.0" prefWidth="200.0" />
                 <Label fx:id="fxLabel1" text="Fjöldi svaraðra spurninga er: 0" translateX="40.0" translateY="40.0" />
             </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
         </HBox>
         <HBox prefHeight="95.0" prefWidth="578.0">
             <children>
@@ -56,12 +66,7 @@
             </ButtonBar>
             </children>
         </HBox>
-        <HBox prefHeight="100.0" prefWidth="200.0">
-            <children>
-                <Pane prefHeight="200.0" prefWidth="200.0" />
-                <Pane prefHeight="200.0" prefWidth="200.0" />
-            </children>
-        </HBox>
+        <fx:include source="footer.fxml" />
     </children>
 
 </VBox>

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <DialogPane prefHeight="500.0" prefWidth="360.0" styleClass="label" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
     <content>
@@ -17,9 +18,18 @@
                         <TextField fx:id="fxSvar" alignment="CENTER" onAction="#onSvar" prefHeight="52.0" prefWidth="254.0" promptText="skrifaðu hér" />
                     </children>
                 </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label translateX="95.0">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
                 <HBox prefHeight="100.0" prefWidth="340.0">
                     <children>
-                        <TextArea fx:id="fxLabel2" prefHeight="400.0" prefWidth="270.0" />
+                        <TextArea fx:id="fxLabel2" prefHeight="400.0" prefWidth="270.0" promptText="Svar frá AI" />
                     </children>
                 </HBox>
             </children>
