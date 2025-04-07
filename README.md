@@ -1,5 +1,5 @@
 # Lýsing á byggingu og keyrslu
-# Til þess að geta notað forritið, þá þarf nettengingu
+# ATH -- Það þarf net tengingu til að geta notað forritið (AI)
 
 - Höfundur: Kristín Sesselja Róbertsdóttir
 - Email: ksr11@hi.is
