@@ -1,4 +1,6 @@
 # Lýsing á byggingu og keyrslu
+# Til þess að geta notað forritið, þá þarf nettengingu
+
 - Höfundur: Kristín Sesselja Róbertsdóttir
 - Email: ksr11@hi.is
 - Github reikningur: kristin111222
